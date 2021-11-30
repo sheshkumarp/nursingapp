@@ -15,9 +15,15 @@ app.use(cors({ origin: CLIENT_URL, credentials: true }))
 app.use(passport.initialize())
 
 //import routes
+const serviceLevelTwoRoutesAdmin = require('./routes/admin/service-level-two')
+const serviceLevelOneRoutesAdmin = require('./routes/admin/service-level-one')
+const serviceRoutesAdmin = require('./routes/admin/service-master')
 const authRoutesAdmin = require('./routes/admin/auth')
 
 //initialize routes
+app.use('/api/admin/service-level-two', serviceLevelTwoRoutesAdmin)
+app.use('/api/admin/service-level-one', serviceLevelOneRoutesAdmin)
+app.use('/api/admin/service', serviceRoutesAdmin)
 app.use('/api/admin', authRoutesAdmin)
 
 //app start

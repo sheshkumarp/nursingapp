@@ -12,7 +12,7 @@ exports.getUsers = async (req, res) => {
 
     return res.status(200).json({
       success: true,
-      users: rows,
+      collections: rows,
     })
   } catch (error) {
     console.log(error.message)
@@ -33,10 +33,9 @@ exports.register = async (req, res) => {
 
     return res.status(201).json({
       success: true,
-      message: 'The registraion was succefull',
+      message: 'The registraion done successfully',
     })
   } catch (error) {
-    console.log(error.message)
     return res.status(500).json({
       error: error.message,
     })
@@ -59,7 +58,6 @@ exports.login = async (req, res) => {
       message: 'Logged in succefully',
     })
   } catch (error) {
-    console.log(error.message)
     return res.status(500).json({
       error: error.message,
     })
@@ -83,7 +81,6 @@ exports.logout = async (req, res) => {
       message: 'Logged out in succefully',
     })
   } catch (error) {
-    console.log(error.message)
     return res.status(500).json({
       error: error.message,
     })
@@ -188,7 +185,6 @@ exports.resetPassword = async (req, res) => {
       email
     ])
 
-    console.log(updated);
 
     res.status(200).send({
         success:true,

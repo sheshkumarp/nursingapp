@@ -22,7 +22,7 @@ passport.use(
         [id]
       )
 
-      console.log(rows)
+      // console.log(rows)
 
       if (!rows.length) {
         throw new Error('401 not authorized')
